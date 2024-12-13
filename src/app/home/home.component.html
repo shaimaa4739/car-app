@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="container ">
+        <nav class="navbar py-5 navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><img src="../assets/imgs/assignment-images/imges/nav/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mx-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Become a renter</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Rental deals</a>
+                </li>
+                <li class="nav-item ">
+                <a class="nav-link " href="#">
+                    How it work
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Why choose us</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <button type="button" class="btn btn-light">sign in</button>
+                <button type="button" class="btn btn-primary mx-2">Sign up</button>
+            </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="d-flex flex-xl-row flex-lg-row flex-md-row flex-column-reverse ">
+        <div class=" col-6 d-flex justif-content-center align-items-center ">
+            <div class="mx-auto w-50">
+                <h1 class="font-700">
+                    Find, book and rent a car 
+                    <span class="highlight-text">
+                        Easily 
+                    </span>
+                </h1>
+        
+                <p> Get a car wherever and whenever you need it with your IOS and Android device. </p>
+            </div>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <img src="../../assets/imgs/assignment-images/imges/landing-page/car 2 1.png" alt="">
+        </div>
+    </div>
+</div>
+
+
+<div class="mx-auto">
+    <app-search (searchChange)="onSearchTermChange($event)"></app-search>
+    <div class="my-5 d-flex align-items-center justify-content-center">
+        <button class="  btn custom-btn">
+            POPULAR RENTAL DEALS
+        </button>
+    </div>
+
+    <div class="d-flex flex-column align-items-center justify-content-center   ">
+        <h1 class="font-700">
+            Most popular cars rental deals
+        </h1>
+    </div>
+
+    <ng-container *ngIf="paginatedList">
+        <div class="row d-flex align-items-center justify-content-center mt-5 w-100">
+            <div *ngFor="let item of paginatedList | search:searchTerm" class="col-3 mb-4 d-flex justify-content-center">
+                <app-card [car]="item"></app-card>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center my-5">
+            <a [routerLink]="'/cars'" class="btn btn-light">Show all vehicles</a>
+        </div>
+    </ng-container>
+</div>
