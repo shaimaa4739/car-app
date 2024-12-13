@@ -1,4 +1,4 @@
-<div class="card px-3 py-2" >
+<div class="card px-3 py-2" (click)="goDetails(car.id)" >
   <img class="card-img-top" [src]="car.img" alt="Card image cap">
   <div class="card-body">
     <div class="d-flex align-items-center"><h3 class="card-title">{{car.car}}</h3> <span> ({{car.car_model}})</span></div>
@@ -8,7 +8,7 @@
     <div class="border-top py-4">
       <div class="d-flex align-items-center justify-content-between ">
         <label for="">Price</label>
-        <p class="card-text "><span class="font-700 font-20">{{car.price}}</span><span class="grey-text">/day</span> </p>
+        <p class="card-text "><span class="font-700 font-20 highlight-text">{{car.price}}</span><span class="grey-text">/day</span> </p>
       </div>
       <button class="btn btn-primary w-100 mt-3" (click)="goDetails(car.id)">Rent Now <img src="../../../assets/imgs/assignment-images/imges/card/arrow-right.png" alt=""></button>
     </div>

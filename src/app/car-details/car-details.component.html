@@ -1,39 +1,49 @@
-<div class="container-fluid">
-    <div class="row vh-100">
-        <div class="col-6 d-flex flex-column  justify-content-center">
-            <img class="mx-negative img-w" src="../../assets/imgs/assignment-images/imges/landing-page/sec-5/Audi 1.png" alt="">
-    
-        </div>
-        <div class="col-6 py-5 d-flex flex-column  justify-content-center ">
-            <button class=" mb-2 btn custom-btn">
-                Why Choose Us
-            </button>
-            <h2 class="w-75">
-                We offer the best experience with our rental deals
-            </h2>
-            <div>
-                <div class="my-3">
-                    <img src="../../assets/imgs/assignment-images/imges/card/d8wxke_2_.png" alt="">
-                    <span class="grey-text mx-2">{{car.car_model_year}}</span>
-                </div>
-                <div class="my-3">
-                    
-                    <img src="../../assets/imgs/assignment-images/imges/card/doors.png" alt="">
-                    <span class="grey-text mx-2">{{car.car_vin}}</span>
-                </div>
-                <div class="my-3">
-                    
-                    <img src="../../assets/imgs/assignment-images/imges/card/Frame.png" alt="">
-                    <span class="grey-text mx-2">{{car.car_color}}</span>
-                </div>
-                <div class="my-3">
-                    
-                    <img src="../../assets/imgs/assignment-images/imges/card/user.png" alt="">
-                        <span class="grey-text mx-2 "><span class="font-700 font-20 highlight-text">{{car.price}}</span><span class="grey-text">/day</span> </span>
+<ng-container *ngIf="car">
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <div class="col-6 d-flex flex-column  justify-content-center">
+                <img class="mx-negative img-w" src="../../assets/imgs/assignment-images/imges/landing-page/sec-5/Audi 1.png" alt="">
+        
+            </div>
+            <div class="col-6 py-5 d-flex flex-column  justify-content-center ">
+                <button class=" mb-2 btn custom-btn">
+                    Why Choose Us
+                </button>
+                <h2 class="w-75">
+                    We offer the best experience with our rental deals
+                </h2>
+                <div>
+                    <div class="my-3">
+                        <img src="../../assets/imgs/assignment-images/imges/card/d8wxke_2_.png" alt="">
+                        <span class="grey-text mx-2">{{car.car_model_year}}</span>
+                    </div>
+                    <div class="my-3">
+                        
+                        <img src="../../assets/imgs/assignment-images/imges/card/doors.png" alt="">
+                        <span class="grey-text mx-2">{{car.car_vin}}</span>
+                    </div>
+                    <div class="my-3">
+                        
+                        <img src="../../assets/imgs/assignment-images/imges/card/Frame.png" alt="">
+                        <span class="grey-text mx-2">{{car.car_color}}</span>
+                    </div>
+                    <div class="my-3">
+                        
+                        <img src="../../assets/imgs/assignment-images/imges/card/user.png" alt="">
+                            <span class="grey-text mx-2 "><span class="font-700 font-20 highlight-text">{{car.price}}</span><span class="grey-text">/day</span> </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
+</ng-container>
+<ng-container *ngIf="!car">
+    <div class="container">
+        <div class="row d-flex flex-column align-items-center justify-content-center my-auto vh-100 ">
+            <h3 class="text-center my-3 highlight-text transparent-bg">
+                No Details for this car
+            </h3>
+            <img class="erro-img" src="../../assets/imgs/assignment-images/imges/not-found/404-not-found.png" alt="">
+        </div>
+    </div>
+</ng-container>

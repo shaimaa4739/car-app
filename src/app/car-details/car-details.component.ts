@@ -17,21 +17,26 @@ export class CarDetailsComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.getCardDetailsById()
+    this.getCarID()
+  }
+
+  getCarID(){
+    this.route.params
+    .subscribe(
+      (res:any)=>{
+        if(res){
+          this.carId = res.id
+          this.getCardDetailsById()
+        }
+      }
+    )
   }
 
   getCardDetailsById(){
-    this.route.params.subscribe(
-      (res: any)=>{
-      this.carId = res.id
-    })
     this._carService.getCarDetails(this.carId)
     .subscribe(
       (res: CarResponseDetails)=>{
         this.car=res.Car
-        console.log(res);
-        
-
       }
     )
   }
